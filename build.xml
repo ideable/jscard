@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     26/07/2011 13:11:16                                                        
+
+     smartcard-js    
+     Javascript API for Smartcards
+                   
+     ====================================================================== -->
+<project name="jscard" default="cfx-test" basedir="jscard-ff-addon">
+    <description>
+    	Smartcard access from Javascript
+    </description>
+	
+	<property name="MOZILLA_ADDON_SDK" value="C:\mozilla\addon-sdk-1.0"/>
+	<property name="PYTHON" value="C:\mozilla-build\python"/>
+	<property name="COMMAND" value="/C bin\\activate.bat &amp; cd ${basedir} &amp; cfx"/>
+	<property name="PROFILE" value="--profiledir=${basedir}/firefox-profile"/>
+
+
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+	
+    <target name="cfx-run" description="cfx-run">
+		<exec dir="${MOZILLA_ADDON_SDK}" executable="cmd">
+			<env key="PATH" path="${PYTHON}"/>
+			<arg line="${COMMAND} run "/>
+		</exec>
+    </target>
+	
+    <target name="cfx-run-profile" description="cfx-run-profile">
+		<exec dir="${MOZILLA_ADDON_SDK}" executable="cmd">
+			<env key="PATH" path="${PYTHON}"/>
+			<arg line="${COMMAND} run ${PROFILE}"/>
+		</exec>
+    </target>
+	
+    <target name="cfx-test" description="cfx-test">
+		<exec dir="${MOZILLA_ADDON_SDK}" executable="cmd">
+			<env key="PATH" path="${PYTHON}"/>
+			<arg line="${COMMAND} test"/>
+		</exec>
+    </target>
+	
+	<target name="cfx-xpi" description="cfx-xpi">
+		<exec dir="${MOZILLA_ADDON_SDK}" executable="cmd">
+			<env key="PATH" path="${PYTHON}"/>
+			<arg line="${COMMAND} xpi"/>
+		</exec>
+    </target>
+
+</project>

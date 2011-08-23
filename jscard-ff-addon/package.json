@@ -1,0 +1,9 @@
+{
+    "name": "jscard", 
+    "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
+    "author": "gperez@ideable.net,umartinez@ideable.net", 
+    "version": "0.1", 
+    "fullName": "Javascript Smartcard API", 
+    "id": "jid1-6BekUg8uQqK4vw", 
+    "description": "Smartcard access from Javascript"
+}
